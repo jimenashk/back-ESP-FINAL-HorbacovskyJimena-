@@ -1,0 +1,42 @@
+server:
+  port: ${PORT:${SERVER_PORT:0}}
+
+spring:
+  application:
+    name: api-serie
+
+#  datasource:
+#    driverClassName: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/serie
+#    username: root
+#    password: 29031999
+
+  data:
+    mongodb:
+      username: root
+      password: root
+      database: series
+      port: 27017
+      host: localhost
+      authentication-database: admin
+
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+
+  zipkin:
+    baseUrl: http://localhost:9411/
+
+  rabbitmq:
+    username: guest
+    password: guest
+    host: localhost
+    port: 5672
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceURL:
+      defaultZone: http://localhost:8761/eureka

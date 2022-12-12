@@ -1,0 +1,15 @@
+server:
+  port: ${PORT:8888}
+
+spring:
+  application:
+    name: config-server
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/jimenashk/back-ESP-FINAL-HorbacovskyJimena-
+          default-label: main
+          search-paths: config-data
+          force-pull: true
